@@ -94,6 +94,7 @@ const quickSort = (originalList) => {
   const smaller = list.filter((item) => item < pivot);
   // this creates a new array (smaller), made up of every item in the list array that meets the condition (item < pivot)
   // we're effectively filtering all the elements smaller than the pivot to a separate array.
+
   const bigger = list.filter((item) => item > pivot);
   // we're effectively filtering all the elements bigger than the pivot to a separate array.
 
@@ -102,31 +103,12 @@ const quickSort = (originalList) => {
   // this also uses a spread operator, to add the items to the array, one by one, not chunks of arrays.
 };
 
+// You can also use a for loop instead of filter, next time I'll use this in a question
+
 // An example of the quicksort function in action
 function findMedian(arr) {
   // Write your code here
   // First add your quicksort function
-
-  const quickSort = (originalList) => {
-    const list = [...originalList];
-
-    if (list.length < 2) {
-      return list;
-    }
-
-    const pivot = list[Math.floor((list.length - 1) / 2)];
-    // this sets the pivot to the median of the array
-
-    const smaller = list.filter((item) => item < pivot);
-    // this creates a new array (smaller), made up of every item in the list array that meets the condition (item < pivot)
-    // we're effectively filtering all the elements smaller than the pivot to a separate array.
-    const bigger = list.filter((item) => item > pivot);
-    // we're effectively filtering all the elements bigger than the pivot to a separate array.
-
-    return [...quickSort(smaller), pivot, ...quickSort(bigger)];
-    //this calls quickSort for the smaller/bigger again, a recursive function until they're both all sorted.
-    // this also uses a spread operator, to add the items to the array, one by one, not chunks of arrays.
-  };
 
   if (arr.length % 2 !== 0) {
     let median = 0;
@@ -147,3 +129,26 @@ function findMedian(arr) {
 }
 
 findMedian([0, 1, 2, 3, 4, 5, 6]);
+
+//Counting Sort
+// Given a list of integers, count and return the number of times each value appears as an array of integers.
+function countingSort(arr) {
+  // Write your code here
+  // first create your empty frequency array
+  // I need to get an array of only zeros from i = 0 to i = 99
+  let result = new Array(100).fill(0);
+  // this creates a new array with length of 100 (last element is 99)
+  // and fills it with 0
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < result.length; j++) {
+      if (j == arr[i]) {
+        result[j]++;
+      }
+    }
+  }
+  //this increments the result array indices that match the original array values
+  return result;
+  // console.log(result);
+}
+
+// countingSort([1,3,45,2,1]);

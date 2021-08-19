@@ -26,13 +26,37 @@
 // }
 
 // Recursive Solution
+// Memoization
+function memoize(fn) {
+  const cache = {};
+  return function (...args) {
+    if (cache[args]) {
+      return cache[args];
+    }
+    // this checks to see if the arguments we're calling are already in the cache, if it is then it returns it
 
-function fib(n) {
+    const result = fn.apply(this, args);
+    cache[args] = result;
+    // this creates keys in the cache object as the arguments we're passing into the function.
+    // and stores their current values
+
+    return result;
+  };
+}
+
+function oldFib(n) {
   if (n < 2) {
     return n;
   }
 
   return fib(n - 1) + fib(n - 2);
+  //recursion, it calls itself until it gets to the base case.
+  //uses the base case to build itself from the ground up.
 }
+
+const fib = memoize(oldFib);
+// this memoizes the function (oldFib) after it has run once and then stores it in the const fib
+//this takes in the memoized fib function (oldFib) and stores it in the const fib for recursion
+// fib = memoize(fib) also works
 
 module.exports = fib;

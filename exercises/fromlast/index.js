@@ -11,6 +11,31 @@
 //    list.insertLast('d');
 //    fromLast(list, 2).data // 'b'
 
-function fromLast(list, n) {}
+function fromLast(list, n) {
+  let v1 = list.head;
+  let v2 = list.head;
+
+  for (n; n > 0; n--) {
+    v2 = v2.next;
+  }
+
+  //   while (n > 0) {
+  //     v2 = v2.next;
+  //     n--;
+  //   }
+  // this is a great way to get to the 3rd position from this.head, without using getAt()
+
+  while (v2.next) {
+    v1 = v1.next;
+    v2 = v2.next;
+  }
+
+  return v1;
+}
+
+// set both pointers to the first node
+// move the second one by n
+// now move slow and fast by one element at a time
+// continue this until fast is pointing at the last element on the list
 
 module.exports = fromLast;

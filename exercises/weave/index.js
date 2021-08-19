@@ -22,8 +22,37 @@
 //    q.remove() // 2
 //    q.remove() // 'There'
 
-const Queue = require('./queue');
+const Queue = require("./queue");
 
-function weave(sourceOne, sourceTwo) {}
+function weave(sourceOne, sourceTwo) {
+  const q = new Queue();
+  //creates the combined queue
+
+  // my solution (wrong, also doesn't use peek)
+  //   // add from source one
+  //   for (let i = 0; i < sourceOne.data.length; i += 2) {
+  //     q.add(sourceOne.remove());
+  //   }
+  //   for (let j = 1; j < sourceTwo.data.length; j += 2) {
+  //     q.add(sourceTwo.remove());
+  //   }
+
+  //   console.log(q);
+  //   return q;
+  // I need my own javascript staging area or console tbh
+
+  //His solution
+  while (sourceOne.peek() || sourceTwo.peek()) {
+    if (sourceOne.peek()) {
+      q.add(sourceOne.remove());
+    }
+
+    if (sourceTwo.peek()) {
+      q.add(sourceTwo.remove());
+    }
+  }
+
+  return q;
+}
 
 module.exports = weave;
