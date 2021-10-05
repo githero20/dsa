@@ -32,4 +32,18 @@ function fizzBuzz(n) {
   // be wary of the order of conditions
 }
 
+// Ternary way
+function fizzBuzz(n) {
+  // Write your code here
+  for (let i = 1; i <= n; i++) {
+    return i % 3 == 0 && i % 5 == 0
+      ? console.log("FizzBuzz")
+      : i % 3 == 0
+      ? console.log("Fizz")
+      : i % 5 == 0
+      ? console.log("Buzz")
+      : console.log(i);
+  }
+}
+
 module.exports = fizzBuzz;
