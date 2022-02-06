@@ -11,6 +11,8 @@
 // class.  Contains should accept a 'data' argument
 // and return the Node in the tree with the same value.
 
+// Binary Search only works when the array has already been sorted, if not then better to use a linear search
+
 class Node {
   constructor(data) {
     this.data = data;

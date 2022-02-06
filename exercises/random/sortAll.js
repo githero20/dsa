@@ -75,7 +75,7 @@ function merge(left, right) {
   // ES 2016
 }
 
-module.exports = { bubbleSort, selectionSort, mergeSort, merge };
+// module.exports = { bubbleSort, selectionSort, mergeSort, merge };
 
 // But before going forward with the Quick sort, selecting the pivot element plays a major role.
 // If you select the first element as the pivot element, then it gives worst performance in the sorted array.
@@ -102,6 +102,7 @@ const quickSort = (originalList) => {
   //this calls quickSort for the smaller/bigger again, a recursive function until they're both all sorted.
   // this also uses a spread operator, to add the items to the array, one by one, not chunks of arrays.
 };
+// seems like quick sort does not allow same number values i.e. [1, 2, 2, 3] = [1, 2, 3]
 
 // You can also use a for loop instead of filter, next time I'll use this in a question
 
@@ -148,6 +149,7 @@ function countingSort(arr) {
   }
   //this increments the result array indices that match the original array values
   return result;
+  // from this you can get the max number of times a value appears
   // console.log(result);
 }
 

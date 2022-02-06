@@ -28,9 +28,12 @@ function matrix(n) {
   let startRow = 0;
   let endRow = n - 1;
   while (startColumn <= endColumn && startRow <= endRow) {
+    // for the rows, you loop through the columns, for the columns you loop through the rows
     // Top row
     for (let i = startColumn; i <= endColumn; i++) {
       results[startRow][i] = counter;
+      // this is always in the format matrix[row][column]
+
       counter++;
     }
     startRow++;
