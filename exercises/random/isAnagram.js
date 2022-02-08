@@ -46,20 +46,19 @@ var isAnagram = function (s, t) {
 var isAnagram = function (s, t) {
   let myTable = new Array(26).fill(0);
   // this creates an array of just zeros
+  
   //   we've assumed that it's just lowercase characters we're receiving
   for (let i = 0; i < s.length; i++) {
     myTable[s.charCodeAt(i) - 97]++;
     // Next, we are looping over the string s, taking a character, converting it to ASCII and subtracting
     // 97 to ensure our character's numeral representation starts at 0 so that we use it as our array index.
     // 97 here is the ASCII value of a.
-    // Then we increase the count at that position in the array
+    // Then we increase the count at that position in the array; 
+    // i.e. if Char(i) = a; then a - a = 0. Therefore we increase the count at position 0. if b, we increase at position 1.
 
-    // myTable[s.charAt(i) - "a"]++;
-    // // i.e. if Char(i) = a; then a - a = 0, if b, we get 1.
   }
   for (let i = 0; i < t.length; i++) {
     myTable[t.charCodeAt(i) - 97]--;
-    // myTable[t.charAt(i) - "a"]--;
     // We do the same check for the new string with our array, only now we decrease the count by one for each entry
   }
 
@@ -69,7 +68,6 @@ var isAnagram = function (s, t) {
   }
 
   return true;
-  //   console.log(true);
 };
 
 isAnagram("anagram", "nagaram");

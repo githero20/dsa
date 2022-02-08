@@ -13,9 +13,6 @@
 // 1 <= m + n <= 200
 // -109 <= nums1[i], nums2[j] <= 109
 
-// Start by comparing the largest numbers between
-// the two arrays and add to the end of nums1
-// note: nums1.length = m + n;
 var merge = function (nums1, m, nums2, n) {
   // first of all we check to ensure that nums2 length is not 0; i.e. n !== 0
   while (n) {
@@ -27,8 +24,8 @@ var merge = function (nums1, m, nums2, n) {
       nums1[m + n - 1] = nums1[--m];
     } else {
       // if not, and this is our initial position, it removes the values of nums2 and adds them to the end of nums1
-      // this continues until you get a last value of nums2 that is < nums[m-1]; i.e. first condition
-      // then it pushes the nums1 value to the end of the array, moving on to the next one. Effectively sorting the arrray
+      // this continues until you get a value of nums2 that is < nums[m-1]; i.e. first condition
+      // then it pushes the nums1 value to the end of the array, effectively sorting the arrray. And continues like that.
       nums1[m + n - 1] = nums2[--n];
       // Note: because the array's endings are already prefilled with 0, add means replace the zero
     }
@@ -36,5 +33,7 @@ var merge = function (nums1, m, nums2, n) {
   return nums1;
   //   console.log(nums1);
 };
+
+// this is O(n) time complexity. O(1) space
 
 merge([1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3);

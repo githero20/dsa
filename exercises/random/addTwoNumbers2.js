@@ -14,6 +14,7 @@ var addTwoNumbers = function (l1, l2) {
       sum += l1;
     }
     l1 = l1.next;
+    
     if (l2.next === null) {
       sum += l2;
     }

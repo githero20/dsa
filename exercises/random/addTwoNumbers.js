@@ -28,7 +28,6 @@ var addTwoNumbers = function (l1, l2) {
     // this is result.next, remember that result = current; therefore the first current.next === result.next.
     // also remember that 7%10 === 7; 10%10=== 0
     current = current.next;
-    // this gets the carry over, and moves the current to it. If 0, it returns to how we started i.e. current = node (0)
 
     sum = sum > 9 ? 1 : 0;
   }
