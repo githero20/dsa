@@ -7,30 +7,6 @@
 // // Output: [[1,6],[8,10],[15,18]]
 // Explanation: Since intervals [1,3] and [2,6] overlaps, merge them into [1,6].
 
-// var merge = function (intervals) {
-//   if (!intervals.length) return intervals;
-//   // first sort the array
-//   intervals.sort((a, b) => a[0] - b[0]);
-//   console.log(intervals);
-//   let prev = intervals[0];
-//   let res = [prev];
-//   console.log(res);
-//   //   this initializes our results array with the first, smallest interval start value
-//   for (let curr of intervals) {
-//     if (curr[0] <= prev[1]) {
-//       prev[1] = Math.max(prev[1], curr[1]);
-//     }
-//     // this is the main logic, checks if the first value of the current array is less than the first
-//     // if it does, then it updates the array with the larger end value
-//     else {
-//       res.push(curr);
-//       prev = curr;
-//       //   lmao this is using linkedlist logic for arrays
-//     }
-//   }
-//   console.log(res);
-//   return res;
-// };
 
 var merge = function (intervals) {
   // first make sure array is sorted according to start time of each interval
@@ -56,6 +32,32 @@ var merge = function (intervals) {
   console.log(intervals);
 
   return intervals;
+};
+
+// According to Leetcode, this is the better solution
+var merge = function (intervals) {
+  if (!intervals.length) return intervals;
+  // first sort the array
+  intervals.sort((a, b) => a[0] - b[0]);
+  console.log(intervals);
+  let prev = intervals[0];
+  let res = [prev];
+  console.log(res);
+  //   this initializes our results array with the first, smallest interval start value
+  for (let curr of intervals) {
+    if (curr[0] <= prev[1]) {
+      prev[1] = Math.max(prev[1], curr[1]);
+    }
+    // this is the main logic, checks if the first value of the current array is less than the first
+    // if it does, then it updates the array with the larger end value
+    else {
+      res.push(curr);
+      prev = curr;
+      //   lmao this is using linkedlist logic for arrays
+    }
+  }
+  console.log(res);
+  return res;
 };
 
 merge([
