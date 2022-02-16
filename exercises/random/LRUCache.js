@@ -99,6 +99,7 @@ LRUCache.prototype.put = function (key, value) {
 // console.log(myKeys);
 
 // Using a Double Linked List, O(1) time O(capacity) space
+// https://leetcode.com/problems/lru-cache/discuss/178988/HashMap%2BDoubleLinkedList-in-JavaScript
 /**
  * @param {number} capacity
  */

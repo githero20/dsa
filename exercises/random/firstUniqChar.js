@@ -13,12 +13,12 @@ var firstUniqChar = function (s) {
       myMap[char] = 1;
     }
   }
-  console.log(myMap);
+//   console.log(myMap);
 
   //   now we loop through that hashmap, and use the key value pair to get the index
   for (let i = 0; i < s.length; i++) {
     if (myMap[s[i]] === 1) {
-      console.log(i);
+    //   console.log(i);
       return i;
     }
   }

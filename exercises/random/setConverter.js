@@ -10,9 +10,6 @@ function setConverter(arr, k) {
       counter++;
     }
   }
-  //seems to be where the problem's coming from
-  //arr[i] works, but set[i] seems to not make sense
-
   // return counter;
   console.log(counter);
 }
