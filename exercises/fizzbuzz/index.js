@@ -36,7 +36,7 @@ function fizzBuzz(n) {
 function fizzBuzz(n) {
   // Write your code here
   for (let i = 1; i <= n; i++) {
-    return i % 3 == 0 && i % 5 == 0
+    i % 3 == 0 && i % 5 == 0
       ? console.log("FizzBuzz")
       : i % 3 == 0
       ? console.log("Fizz")

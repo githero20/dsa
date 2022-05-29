@@ -139,7 +139,7 @@ var compress = function (chars) {
   let count = 1;
   let start = 0;
 
-  for (let i = 1; i < chars.length; i++) {
+  for (let i = 1; i <= chars.length; i++) {
     let current = chars[i];
     let pre = chars[i - 1];
 
