@@ -24,6 +24,22 @@ var twoSum = function (nums, target) {
 twoSum([2, 7, 11, 15], 9);
 twoSum([3, 3], 6);
 
+// TypeScrit Version
+// function twoSum(nums: number[], target: number): number[] {
+//   let myMap = new Map();
+//   for (let i = 0; i < nums.length; i++) {
+//       let curr: number = nums[i];
+//       let diff: number = target - curr;
+//       let res: number[] = [];
+//       if (myMap.has(diff)) {
+//           res = [myMap.get(diff), i]
+//           return res;
+//       } else {
+//           myMap.set(curr, i)
+//       }
+//   }
+// };
+
 const twoSumII = function (numbers, target) {
   // Given a 1-indexed array of integers numbers that is already sorted in non-decreasing order,
   // find two numbers such that they add up to a specific target number.
@@ -38,6 +54,7 @@ const twoSumII = function (numbers, target) {
   //   let diff = target - numbers[j];
   //   if (myMap.has(diff)) {
   //     let res = [myMap.get(diff) + 1, j + 1];
+  // +1 because it's one-indexed, i.e. starts from 1
   //     // this gets the value (i.e. index) of diff
   //     return res;
   //     // we're returning res inside the loop because we know there's only one answer to this question in the array.

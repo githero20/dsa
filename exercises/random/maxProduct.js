@@ -1,3 +1,6 @@
+// https://leetcode.com/problems/maximum-product-of-word-lengths/discuss/489956/JavaScript-with-bitwise-explanation
+
+
 // 318. Maximum Product of Word Lengths
 // Medium
 
@@ -52,13 +55,14 @@ var maxProduct = function (words) {
     for (let j = i + 1; j < words.length; j++) {
       let x = words[i],
         y = words[j];
-      let unique = true;
 
-      if (checkUniqueStrings(a, b)) {
-        max = Math.max(max, a.length * b.length);
+      if (checkUniqueStrings(x, y)) {
+        maxVal = Math.max(maxVal, x.length * y.length);
       }
     }
   }
 
-  return max;
+  return maxVal;
 };
+
+// There's a bitwise solution but ...
