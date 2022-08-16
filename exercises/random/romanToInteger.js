@@ -37,6 +37,10 @@ var romanToInt = function (s) {
 
   let res = 0;
 
+  // Roman numerals generally work with the larger value first i.e. MX, VII etc. In that situation, you just add the values of each character
+  // However, there are situations where a smaller value may come first e.g. IV, XC etc. In that situation, you subtract that smaller value from the bigger one.
+  // (note: it is usually just a singular smaller value)
+
   for (let char = 0; char < s.length; char++) {
     if (romans[s[char]] < romans[s[char + 1]]) {
       res -= romans[s[char]];

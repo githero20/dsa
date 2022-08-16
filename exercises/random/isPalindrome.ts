@@ -17,3 +17,10 @@ function isPalindrome(s: string): boolean {
   });
   //     checks every char in the str against its opposite counterpart
 }
+
+function isPalindromeNumber(x: number): boolean {
+  let r: string = x.toString();
+  return r.split("").every((char, i) => {
+    return char === r[r.length - i - 1];
+  });
+}
