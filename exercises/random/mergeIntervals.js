@@ -7,7 +7,6 @@
 // // Output: [[1,6],[8,10],[15,18]]
 // Explanation: Since intervals [1,3] and [2,6] overlaps, merge them into [1,6].
 
-
 var merge = function (intervals) {
   // first make sure array is sorted according to start time of each interval
   intervals.sort((a, b) => a[0] - b[0]);
@@ -37,8 +36,9 @@ var merge = function (intervals) {
 // According to Leetcode, this is the better solution
 var merge = function (intervals) {
   if (!intervals.length) return intervals;
-  // first sort the array
+  // return, if array empty
   intervals.sort((a, b) => a[0] - b[0]);
+  // first, sort the array based on the start meeting times
   console.log(intervals);
   let prev = intervals[0];
   let res = [prev];
@@ -48,11 +48,12 @@ var merge = function (intervals) {
     if (curr[0] <= prev[1]) {
       prev[1] = Math.max(prev[1], curr[1]);
     }
-    // this is the main logic, checks if the first value of the current array is less than the first
+    // this is the main logic, checks if the first (start) value of the current array (meeting) is less than the first
     // if it does, then it updates the array with the larger end value
     else {
       res.push(curr);
       prev = curr;
+      // updates the previous with the new value
       //   lmao this is using linkedlist logic for arrays
     }
   }

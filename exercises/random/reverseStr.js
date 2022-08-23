@@ -4,11 +4,17 @@
 
 var reverseString = function (s) {
   for (let i = 0; i < s.length; i++) {
-    s.splice(i, 0, s.pop());
+    // s.splice(i, 0, s.pop());
+    s[i] = s[s.length - i - 1];
+    // console.log(s[s.length - i - 1]);
   }
+
+  console.log(s);
 
   //   for (let i=0, j=s.length-1; i<j; i++, j--) {
   //     const x = s[i]; const y = s[j];
   //     s[i] = y; s[j] = x;
   // }
 };
+
+reverseString("hello");
