@@ -71,48 +71,49 @@ const twoSumII = (nums, res, i) => {
 // Space Complexity: from \mathcal{O}(\log{n})O(logn) to \mathcal{O}(n)O(n), depending on the implementation of the sorting algorithm. For the purpose of complexity analysis, we ignore the memory required for the output.
 
 // Approach 2: Using HashSets
+// Doesn't work for all test cases, learned this the hard way
 
-var threeSum = function (nums) {
-  // this is very similar to twoSums, only the target is 0
+// var threeSum = function (nums) {
+//   // this is very similar to twoSums, only the target is 0
 
-  // Second Option: Using TwoSums approach, Hashset
-  let res = [];
-  nums.sort((a, b) => a - b);
-  // now, lets loop through the array, ignoring any values that are greater than 0 or duplicates
-  for (let i = 0; i < nums.length && nums[i] <= 0; i++) {
-    if (nums[i] > 0) {
-      break;
-    }
-    // 0 can be interchanged for target here
-    // we've sorted out the values > 0, in the line above
-    if (i == 0 || nums[i - 1] !== nums[i]) {
-      // we've sorted out the duplicates
-      twoSumII(nums, res, i);
-      // now we use the twoSumII function to our advantage
-    }
-  }
-  // console.log(res);
-  return res;
-};
+//   // Second Option: Using TwoSums approach, Hashset
+//   let res = [];
+//   nums.sort((a, b) => a - b);
+//   // now, lets loop through the array, ignoring any values that are greater than 0 or duplicates
+//   for (let i = 0; i < nums.length && nums[i] <= 0; i++) {
+//     if (nums[i] > 0) {
+//       break;
+//     }
+//     // 0 can be interchanged for target here
+//     // we've sorted out the values > 0, in the line above
+//     if (i == 0 || nums[i - 1] !== nums[i]) {
+//       // we've sorted out the duplicates
+//       twoSumII(nums, res, i);
+//       // now we use the twoSumII function to our advantage
+//     }
+//   }
+//   // console.log(res);
+//   return res;
+// };
 
-const twoSumII = (nums, res, i) => {
-  // here we use a hashset
-  // usng a set to also avoid the duplicates
+// const twoSumII = (nums, res, i) => {
+//   // here we use a hashset
+//   // usng a set to also avoid the duplicates
 
-  let seen = new Set();
-  for (let j = i + 1; j < nums.length; j++) {
-    let complement = -nums[i] - nums[j];
-    // this is similar to target - nums[i] from twoSum, only target is 0
-    if (seen.has(complement)) {
-      res.push([nums[i], nums[j], complement]);
-      while (j < nums.length - 1 && j == j + 1) {
-        j++;
-      }
-    } else {
-      seen.add(nums[j]);
-    }
-  }
-};
+//   let seen = new Set();
+//   for (let j = i + 1; j < nums.length; j++) {
+//     let complement = -nums[i] - nums[j];
+//     // this is similar to target - nums[i] from twoSum, only target is 0
+//     if (seen.has(complement)) {
+//       res.push([nums[i], nums[j], complement]);
+//       while (j < nums.length - 1 && j == j + 1) {
+//         j++;
+//       }
+//     } else {
+//       seen.add(nums[j]);
+//     }
+//   }
+// };
 
 // Approach 3
 // Unsorted
