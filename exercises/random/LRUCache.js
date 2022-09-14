@@ -15,7 +15,7 @@
 // [null, null, null, 1, null, -1, null, -1, 3, 4]
 
 // Explanation
-// LRUCache lRUCache = new LRUCache(2);
+// LRUCache lRUCache = new LRUCache(2); i.e. max size is 2 items
 // lRUCache.put(1, 1); // cache is {1=1}
 // lRUCache.put(2, 2); // cache is {1=1, 2=2}
 // lRUCache.get(1);    // return 1
@@ -47,6 +47,7 @@ LRUCache.prototype.get = function (key) {
 
   // to get a key, we need to delete it and re-add it first before returning it
   // this way, the order will change and it becomes the most recently used
+  // most recently used means last (key, value) pair in the map while lru means first
   // remember we must order it based on Least Recently Used.
 
   const k = this.cache.get(key);
