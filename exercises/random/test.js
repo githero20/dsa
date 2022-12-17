@@ -83,4 +83,19 @@
 
 // console.log(k);
 
-console.log("first" * 3);
+// console.log("first" * 3);
+
+// let eId = ["a",2,3,"r"]
+
+// let myArr = [1,2,3,4,5,6,7,8];
+// console.log(myArr.filter(num => eId.some(i => i === )  ))
+
+if (42) {
+    if (42 == "42") {
+        if (true) {
+            console.log("c")
+        }
+    } else {
+        console.log("b")
+    }
+}
