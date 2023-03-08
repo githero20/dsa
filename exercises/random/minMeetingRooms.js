@@ -4,7 +4,7 @@ var minMeetingRooms = function (intervals) {
   // sort all start and end times
   let start = intervals.map((a) => a[0]).sort((a, b) => a - b);
   let end = intervals.map((a) => a[1]).sort((a, b) => a - b);
-  //   the map funcrion returns an array of every a[0] item, and a[1] respectively
+  //   the map funcrion returns an array of every a[0] item, and a[1] respectively `
 
   let rooms = 0;
   let endPtr = 0;

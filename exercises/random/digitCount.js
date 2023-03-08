@@ -11,12 +11,12 @@ function digitCount(num) {
   console.log(arr);
 
   //   we use this to track the length of members
-  //   we can just track where the member length changes
+  //   we can just track where the member length changes 
   for (let i = 0; i <= arr.length; i++) {
     if (arr[i].length > memberLength) {
       memberLengthChanges.push(i);
       memberLength = arr[i].length;
-    }
+    } 
   }
 }
 
