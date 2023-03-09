@@ -7,9 +7,10 @@ var checkIfExist = function (arr) {
       return true;
       //   console.log(true);
     }
-    return false;
+    mySet.add(val);
     // else console.log(false);
   }
+  return false;
 
   // //   Using Array.some
   // const check = (val) => val / 2 || val * 2;
