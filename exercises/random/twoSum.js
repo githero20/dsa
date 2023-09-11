@@ -64,7 +64,7 @@ const twoSumII = function (numbers, target) {
   //   // this sets a key value pair, with the number as the key and its index as the value
   // }
 
-  // Since we know that it is sorted l-r i.e. non-decresing order, we can use a Binary Search tree (BST).
+  // Since we know that it is sorted l-r i.e. increasing order, we can use a Binary Search tree (BST).
   let left = 0;
   let right = nums.length - 1;
   let tempSum = 0;
