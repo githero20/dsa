@@ -14,8 +14,9 @@ var twoSum = function (nums, target) {
       let res = [myMap.get(diff), i];
       // gets the key(index) of the value, and returns it with the index i
       console.log(res);
-      // return res;
+      return res;
     } else {
+      // saving into key, value pairs of the number and its index
       myMap.set(curr, i);
     }
   }
