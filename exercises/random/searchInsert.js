@@ -18,30 +18,29 @@
 
 var searchInsert = function (nums, target) {
   // Conditions
-
   // 1. the target exists within the nums array
-  for (let i = 0; i < nums.length; i++) {
-    if (nums[i] === target) {
-      return i;
-    }
-  }
-
-  // The target does not exist
-
   // 2. the target is smaller than the first number in the nums array
-  if (target < nums[0]) {
-    return 0;
-  }
-
   // 3. the target is greater than the last number in the nums array
-  if (target > nums[length - 1]) {
-    return length;
-  }
-
   // 4. the target does not exist in the array, but it is within the range of number values
-  for (let i = 0; i < nums.length; i++) {
-    if (nums[i] === target - 1) {
-      return i + 1;
+
+  // Using Binary Search
+  // P.S. Search the binarySearch.js file in the folder
+
+  // lo, mid, hi are all indices of values in the array, not the actual values
+  let lo = 0;
+  let hi = nums.length - 1;
+
+  while (lo < hi) {
+    let mid = Math.floor(lo + (hi - lo) / 2);
+
+    if (mid === target) {
+      return mid;
+    } else if (mid > target) {
+      lo = mid + 1;
+    } else if (mid < target) {
+      hi = mid - 1;
     }
   }
+
+  return -1;
 };
