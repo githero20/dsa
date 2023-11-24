@@ -29,18 +29,20 @@ var searchInsert = function (nums, target) {
   // lo, mid, hi are all indices of values in the array, not the actual values
   let lo = 0;
   let hi = nums.length - 1;
+  // let insert = 0;
 
-  while (lo < hi) {
+  while (lo <= hi) {
     let mid = Math.floor(lo + (hi - lo) / 2);
-
-    if (mid === target) {
+    if (nums[mid] === target) {
       return mid;
-    } else if (mid > target) {
+    } else if (nums[mid] < target) {
       lo = mid + 1;
-    } else if (mid < target) {
+      // insert = mid + 1;
+    } else if (nums[mid] > target) {
       hi = mid - 1;
+      // insert = mid;
     }
   }
 
-  return -1;
+  return lo;
 };
