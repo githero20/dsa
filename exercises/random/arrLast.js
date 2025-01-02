@@ -5,10 +5,3 @@
 // Explanation: Calling nums.last() should return the last element: 3.
 
 // Hint: Use 'this' keyword
-Array.prototype.last = function () {
-  if (this.length === 0) {
-    return -1;
-  }
-
-  return this[this.length - 1];
-};
