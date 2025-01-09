@@ -47,3 +47,5 @@ int fib(int n) {
 // f i b ( 4 ) -> lookup meroo[4]
 // f i b ( 3 ) -> lookup me[tto[3]
 // store 5 at memo[S]
+
+// memoizing reduces the n time to constant time, so it is now O(n)
