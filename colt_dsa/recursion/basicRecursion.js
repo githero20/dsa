@@ -50,3 +50,14 @@ factorial(5);
 // stack segment, is a fixed-sized buffer that stores local
 // function variables and return address data during program
 // execution.
+
+function factorial(n) {
+  // let total = 1;
+  // for (let index = 0; index < array.length; index++) {
+  //   total *= index;
+  // }
+
+  if (n === 1) return 1;
+
+  return n * factorial(n - 1);
+}
